@@ -1,5 +1,6 @@
 import React from 'react';
 import { Carousel } from 'react-bootstrap';
+import './Banner.css';
 
 const Banner = () => {
   return (
@@ -7,7 +8,7 @@ const Banner = () => {
       <Carousel fade>
         <Carousel.Item>
           <img
-            className='d-block w-100'
+            className='d-block w-100 banner-img'
             src='https://tallypress.com/wp-content/uploads/2022/03/top-10-bicycle-shops-in-penang.png'
             alt='First slide'
           />
@@ -17,7 +18,11 @@ const Banner = () => {
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
-          <img className='d-block w-100' src='https://www.hovecycles.com/inside-large.jpg' alt='Second slide' />
+          <img
+            className='d-block w-100 banner-img'
+            src='https://www.hovecycles.com/inside-large.jpg'
+            alt='Second slide'
+          />
 
           <Carousel.Caption>
             <h3>Second slide label</h3>
@@ -25,7 +30,11 @@ const Banner = () => {
           </Carousel.Caption>
         </Carousel.Item>
         <Carousel.Item>
-          <img className='d-block w-100' src='holder.js/800x400?text=Third slide&bg=20232a' alt='Third slide' />
+          <img
+            className='d-block w-100 banner-img'
+            src='https://content3.jdmagicbox.com/comp/zirakpur/p8/0172px172.x172.190305142505.f6p8/catalogue/nagpal-cycle-store-zirakpur-1zx0vp3fae.jpg?clr=333333'
+            alt='Third slide'
+          />
 
           <Carousel.Caption>
             <h3>Third slide label</h3>
