@@ -1,0 +1,18 @@
+.header-nav {
+  background-color: #1c5889;
+}
+.nav-element {
+  display: flex;
+  justify-content: space-between;
+}
+.nav-logo {
+  display: flex;
+}
+.nav-logo-heading {
+  font-family: fantasy;
+  color: #df5d46;
+  font-style: italic;
+}
+.nav-logo-heading span {
+  color: #01a0c7;
+}
