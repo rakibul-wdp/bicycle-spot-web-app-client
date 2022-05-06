@@ -1,0 +1,13 @@
+.features-horizontal {
+  border-bottom: 3px solid orange;
+}
+.features-items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 5%;
+}
+.features-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
