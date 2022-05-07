@@ -10,10 +10,11 @@ const Login = () => {
   const passwordRef = useRef('');
   const navigate = useNavigate();
   const location = useLocation();
-  const from = location.state?.from?.pathname || '/';
   let errorElement;
   const [signInWithEmailAndPassword, user, loading, error] = useSignInWithEmailAndPassword(auth);
   const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
+
+  const from = location.state?.from?.pathname || '/';
   // const [token] = useToken(user);
 
   // if (token) {
@@ -50,24 +51,22 @@ const Login = () => {
     }
   };
   return (
-    <div>
+    <div className='w-50 mx-auto'>
       <h2>Login</h2>
       <form onSubmit={handleSubmit}>
-        <label htmlFor='Username'></label>
+        <label htmlFor='Username'>Username</label>
         <input ref={emailRef} type='email' name='email' id='' placeholder='Type your email' required />
-        <label htmlFor='Password'></label>
+        <label htmlFor='Password'>Password</label>
         <input ref={passwordRef} type='password' name='password' id='' placeholder='Type your password' required />
         {errorElement}
         <p>
-          New to Genius Car?{' '}
           <Link to='/register' className='text-primary pe-auto text-decoration-none' onClick={navigateRegister}>
-            Please Register
+            Please Register...!
           </Link>{' '}
         </p>
         <p>
-          Forget Password?{' '}
-          <button className='btn btn-link text-primary pe-auto text-decoration-none' onClick={resetPassword}>
-            Reset Password
+          <button className='btn btn-link text-danger pe-auto text-decoration-none' onClick={resetPassword}>
+            Forget Password...?
           </button>{' '}
         </p>
         <button>Login</button>
