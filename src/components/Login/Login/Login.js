@@ -4,6 +4,7 @@ import { toast } from 'react-toastify';
 import auth from '../../../firebase.init';
 import Loading from '../../Common/Loading/Loading';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import SocialLogin from '../SocialLogin/SocialLogin';
 
 const Login = () => {
   const emailRef = useRef('');
@@ -71,6 +72,7 @@ const Login = () => {
         </p>
         <button>Login</button>
       </form>
+      <SocialLogin />
     </div>
   );
 };

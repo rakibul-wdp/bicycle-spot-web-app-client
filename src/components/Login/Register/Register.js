@@ -3,6 +3,7 @@ import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-fireb
 import { useNavigate } from 'react-router-dom';
 import auth from '../../../firebase.init';
 import Loading from '../../Common/Loading/Loading';
+import SocialLogin from '../SocialLogin/SocialLogin';
 
 const Register = () => {
   const [agree, setAgree] = useState(false);
@@ -62,6 +63,7 @@ const Register = () => {
           Login
         </span>
       </p>
+      <SocialLogin />
     </div>
   );
 };
