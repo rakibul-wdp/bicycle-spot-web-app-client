@@ -5,7 +5,7 @@ import './Inventories.css';
 const Inventories = () => {
   const [inventories, setInventories] = useState([]);
   useEffect(() => {
-    fetch('InventoryItems.json')
+    fetch('http://localhost:5000/stock')
       .then((res) => res.json())
       .then((data) => setInventories(data));
   }, []);
