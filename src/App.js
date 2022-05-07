@@ -1,8 +1,11 @@
 import { Route, Routes } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
 import './App.css';
 import Header from './components/Common/Header/Header';
 import Home from './components/Home/Home/Home';
 import InventoryDetail from './components/InventoryDetail/InventoryDetail';
+import Login from './components/Login/Login/Login';
+import RequireAuth from './components/Login/RequireAuth/RequireAuth';
 
 function App() {
   return (
@@ -18,7 +21,9 @@ function App() {
             </RequireAuth>
           }
         />
+        <Route path='/login' element={<Login />} />
       </Routes>
+      <ToastContainer />
     </div>
   );
 }
