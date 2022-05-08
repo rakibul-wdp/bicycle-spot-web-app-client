@@ -7,6 +7,7 @@ import InventoryDetail from './components/InventoryDetail/InventoryDetail';
 import Login from './components/Login/Login/Login';
 import Register from './components/Login/Register/Register';
 import RequireAuth from './components/Login/RequireAuth/RequireAuth';
+import ManageInventory from './components/ManageInventory/ManageInventory';
 
 function App() {
   return (
@@ -24,6 +25,14 @@ function App() {
         />
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
+        <Route
+          path='/manage'
+          element={
+            <RequireAuth>
+              <ManageInventory />
+            </RequireAuth>
+          }
+        />
       </Routes>
       <ToastContainer />
     </div>

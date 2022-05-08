@@ -21,6 +21,11 @@ const Header = () => {
         </div>
         <div>
           <CustomLink to={'/'}>Home</CustomLink>
+          {user && (
+            <>
+              <CustomLink to={'/manage'}>Manage Inventory</CustomLink>
+            </>
+          )}
           {user ? <button onClick={handleSignOut}>Sign Out</button> : <CustomLink to={'/login'}>Login</CustomLink>}
         </div>
       </div>
