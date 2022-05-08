@@ -1,6 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import './App.css';
+import AddItem from './components/AddItem/AddItem';
 import Header from './components/Common/Header/Header';
 import Home from './components/Home/Home/Home';
 import InventoryDetail from './components/InventoryDetail/InventoryDetail';
@@ -30,6 +31,14 @@ function App() {
           element={
             <RequireAuth>
               <ManageInventory />
+            </RequireAuth>
+          }
+        />
+        <Route
+          path='/add'
+          element={
+            <RequireAuth>
+              <AddItem />
             </RequireAuth>
           }
         />
