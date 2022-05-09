@@ -5,6 +5,7 @@ import auth from '../../../firebase.init';
 import Loading from '../../Common/Loading/Loading';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import SocialLogin from '../SocialLogin/SocialLogin';
+import useToken from '../../../hooks/useToken';
 
 const Login = () => {
   const emailRef = useRef('');
@@ -16,11 +17,11 @@ const Login = () => {
   const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
 
   const from = location.state?.from?.pathname || '/';
-  // const [token] = useToken(user);
+  const [token] = useToken(user);
 
-  // if (token) {
-  //   navigate(from, { replace: true });
-  // }
+  if (token) {
+    navigate(from, { replace: true });
+  }
 
   if (error) {
     errorElement = <p className='text-danger'>Error: {error?.message}</p>;

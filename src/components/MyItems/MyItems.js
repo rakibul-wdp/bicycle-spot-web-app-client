@@ -8,11 +8,12 @@ import { useNavigate } from 'react-router-dom';
 const MyItems = () => {
   const [user] = useAuthState(auth);
   const [items, setItems] = useState([]);
+  console.log(items);
   const navigate = useNavigate();
 
   useEffect(() => {
     const getItems = async () => {
-      const email = user.email;
+      const email = user?.email;
       const url = `http://localhost:5000/items?email=${email}`;
       try {
         const { data } = await axiosPrivate.get(url);
@@ -26,9 +27,30 @@ const MyItems = () => {
     };
     getItems();
   }, [user]);
+
+  const handleDelete = (id) => {
+    const email = user?.email;
+    const proceed = window.confirm('Are you sure?');
+    if (proceed) {
+      const url = `http://localhost:5000/items?email=${email}`;
+      fetch(url, {
+        method: 'DELETE',
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          const remaining = items.filter((item) => item._id !== id);
+          setItems(remaining);
+        });
+    }
+  };
   return (
     <div>
-      <h2>My Own Items Here {items.length}</h2>
+      <h2>My Own Items Here </h2>
+      {items.map((item) => (
+        <li key={item._id}>
+          {item.name} <button onClick={() => handleDelete(item._id)}>Delete</button>
+        </li>
+      ))}
     </div>
   );
 };
