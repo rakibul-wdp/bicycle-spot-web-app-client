@@ -1,0 +1,14 @@
+.inventory-details-container {
+  box-shadow: rgb(17 12 46 / 15%) 0px 48px 100px 0px;
+  padding: 45px 45px;
+  text-align: center;
+}
+.btn-form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 25%;
+}
+.inventory-details {
+  padding: 0 35%;
+}

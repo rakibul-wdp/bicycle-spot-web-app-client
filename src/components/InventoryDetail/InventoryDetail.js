@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
+import './InventoryDetail.css';
 
 const InventoryDetail = () => {
   const { inventoryId } = useParams();
@@ -62,23 +63,36 @@ const InventoryDetail = () => {
     navigate('/manage');
   };
   return (
-    <div className='text-center'>
-      <h2>This inventory detail and private</h2>
-      <img width={'300px'} src={img} alt='' />
-      <p>
-        <small>Product Id: {_id}</small>
-      </p>
-      <h3>{name}</h3>
-      <p>Price: {price}</p>
-      <p>Quantity: {quantity}</p>
-      <p>Supplier Name: {supplierName}</p>
-      <p className='w-50 mx-auto'>{description}</p>
-      <button onClick={handleDelivered}>Delivered</button>
-      <form onSubmit={handelUpload}>
-        <input type='number' name='quantity' id='' placeholder='Quantity' required />
-        <input type='submit' value='Restock Item' />
-      </form>
-      <button className='d-block text-center my-5' onClick={() => navigateManage()}>
+    <div className='container'>
+      <h2 className='text-center mt-5'>
+        <span className='feature-heading'>INVENTORY</span> DETAILS
+      </h2>
+      <hr className='features-horizontal mb-5' />
+      <div className='inventory-details-container'>
+        <img className='img-fluid inventory-image' src={img} alt='' />
+        <p>
+          <small>Product Id: {_id}</small>
+        </p>
+        <h3>{name}</h3>
+        <p>
+          Supplier Name: <span className='fw-bold'>{supplierName}</span>
+        </p>
+        <div className='inventory-p-q inventory-details'>
+          <p>Price: {price}</p>
+          <p className='inventory-quantity'>Quantity: {quantity}</p>
+        </div>
+        <p className='w-50 mx-auto'>{description}</p>
+        <div className='btn-form'>
+          <button className='inventory-btn' onClick={handleDelivered}>
+            Delivered
+          </button>
+          <form onSubmit={handelUpload}>
+            <input type='number' name='quantity' id='' placeholder='Quantity' required />
+            <input className='inventory-btn ms-1' type='submit' value='Restock Item' />
+          </form>
+        </div>
+      </div>
+      <button className='d-block inventories-btn mb-5' onClick={() => navigateManage()}>
         Manage Inventory
       </button>
     </div>
