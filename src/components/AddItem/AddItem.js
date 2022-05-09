@@ -2,6 +2,7 @@ import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
+import './AddItem.css';
 
 const AddItem = () => {
   const [user] = useAuthState(auth);
@@ -33,16 +34,45 @@ const AddItem = () => {
   };
   return (
     <div>
-      <h2>Add New Item</h2>
-      <form onSubmit={handleAddItem}>
-        <input type='text' name='name' id='' placeholder='Name' required />
-        <input type='email' name='email' value={user?.email} id='' placeholder='Email' required readOnly disabled />
-        <input type='number' name='price' id='' placeholder='Price' required />
-        <input type='number' name='quantity' id='' placeholder='Quantity' required />
-        <input type='text' name='supplierName' id='' placeholder='Supplier Name' required />
-        <textarea type='text' name='description' id='' placeholder='Description' required />
-        <input type='text' name='img' id='' placeholder='Image URL' required />
-        <input type='submit' value='Add Item' />
+      <div className='text-center my-4'>
+        <h2>
+          <span className='feature-heading'>ADD</span> NEW ITEM
+        </h2>
+        <hr className='features-horizontal' />
+      </div>
+      <form className='w-25 mx-auto form-container' onSubmit={handleAddItem}>
+        <input className='form-input-field' type='text' name='name' id='' placeholder='Name' required />
+        <input
+          className='form-input-field'
+          type='email'
+          name='email'
+          value={user?.email}
+          id=''
+          placeholder='Email'
+          required
+          readOnly
+          disabled
+        />
+        <input className='form-input-field' type='number' name='price' id='' placeholder='Price' required />
+        <input className='form-input-field' type='number' name='quantity' id='' placeholder='Quantity' required />
+        <input
+          className='form-input-field'
+          type='text'
+          name='supplierName'
+          id=''
+          placeholder='Supplier Name'
+          required
+        />
+        <textarea
+          className='form-input-field'
+          type='text'
+          name='description'
+          id=''
+          placeholder='Description'
+          required
+        />
+        <input className='form-input-field' type='text' name='img' id='' placeholder='Image URL' required />
+        <input className='form-input-field form-input-field-btn' type='submit' value='Add Item' />
       </form>
     </div>
   );
