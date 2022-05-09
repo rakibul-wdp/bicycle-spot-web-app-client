@@ -1,12 +1,14 @@
 .header-nav {
-  background-color: #1c5889;
+  background-color: #1e6097;
 }
 .nav-element {
   display: flex;
+  align-items: center;
   justify-content: space-between;
 }
 .nav-logo {
   display: flex;
+  align-items: center;
 }
 .nav-logo-heading {
   font-family: fantasy;
@@ -15,4 +17,43 @@
 }
 .nav-logo-heading span {
   color: #01a0c7;
+}
+.header-menu {
+  display: flex;
+}
+.header-menu div {
+  font-size: 18px;
+  margin-left: 25px;
+}
+.header-sign-out-btn {
+  font-size: 18px;
+  color: #ffffff;
+  margin-bottom: 7.3px;
+  margin-left: 25px;
+  border: none;
+  background-color: #1e6097;
+}
+
+@media only screen and (max-width: 576px) {
+  .nav-element {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .header-menu div {
+    font-size: 18px;
+    margin-left: 5px;
+  }
+}
+
+@media only screen and (min-width: 577px) and (max-width: 768px) {
+  .nav-element {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .header-menu div {
+    font-size: 18px;
+    margin-left: 5px;
+  }
 }

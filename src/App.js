@@ -11,6 +11,7 @@ import Register from './components/Login/Register/Register';
 import RequireAuth from './components/Login/RequireAuth/RequireAuth';
 import ManageInventory from './components/ManageInventory/ManageInventory';
 import MyItems from './components/MyItems/MyItems';
+import NotFound from './components/NotFound/NotFound';
 
 function App() {
   return (
@@ -53,6 +54,7 @@ function App() {
           }
         />
         <Route path='/blogs' element={<Blogs />} />
+        <Route path='*' element={<NotFound />} />
       </Routes>
       <ToastContainer />
     </div>
