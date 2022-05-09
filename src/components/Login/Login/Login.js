@@ -6,6 +6,7 @@ import Loading from '../../Common/Loading/Loading';
 import { useSendPasswordResetEmail, useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import SocialLogin from '../SocialLogin/SocialLogin';
 import useToken from '../../../hooks/useToken';
+import './Login.css';
 
 const Login = () => {
   const emailRef = useRef('');
@@ -53,25 +54,41 @@ const Login = () => {
     }
   };
   return (
-    <div className='w-50 mx-auto'>
-      <h2>Login</h2>
+    <div className='mx-auto form-container'>
+      <h2 className='text-center'>Login</h2>
       <form onSubmit={handleSubmit}>
-        <label htmlFor='Username'>Username</label>
-        <input ref={emailRef} type='email' name='email' id='' placeholder='Type your email' required />
-        <label htmlFor='Password'>Password</label>
-        <input ref={passwordRef} type='password' name='password' id='' placeholder='Type your password' required />
+        <input
+          className='form-input-field'
+          ref={emailRef}
+          type='email'
+          name='email'
+          id=''
+          placeholder='Type your email'
+          required
+        />
+        <input
+          className='form-input-field'
+          ref={passwordRef}
+          type='password'
+          name='password'
+          id=''
+          placeholder='Type your password'
+          required
+        />
         {errorElement}
-        <p>
-          <Link to='/register' className='text-primary pe-auto text-decoration-none' onClick={navigateRegister}>
-            Please Register...!
-          </Link>{' '}
-        </p>
-        <p>
-          <button className='btn btn-link text-danger pe-auto text-decoration-none' onClick={resetPassword}>
-            Forget Password...?
-          </button>{' '}
-        </p>
-        <button>Login</button>
+        <div className='login-text-link'>
+          <p>
+            <Link to='/register' className='text-primary pe-auto text-decoration-none' onClick={navigateRegister}>
+              Please Register...!
+            </Link>{' '}
+          </p>
+          <p>
+            <button className='btn btn-link text-primary pe-auto text-decoration-none' onClick={resetPassword}>
+              Forget Password...?
+            </button>{' '}
+          </p>
+        </div>
+        <button className='form-input-field form-input-field-btn'>Login</button>
       </form>
       <SocialLogin />
     </div>

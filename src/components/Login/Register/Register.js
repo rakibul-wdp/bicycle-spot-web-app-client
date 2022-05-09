@@ -39,29 +39,30 @@ const Register = () => {
     console.log('Updated profile');
   };
   return (
-    <div>
-      <h2>Register</h2>
+    <div className='mx-auto form-container mt-5'>
+      <h2 className='text-center'>Register</h2>
       <form onSubmit={handleRegister}>
-        <label htmlFor='name'>Name</label>
-        <input type='text' name='name' id='' placeholder='Type your name' required />
-        <label htmlFor='email'>Email</label>
-        <input type='email' name='email' id='' placeholder='Type your email' required />
-        <label htmlFor='password'>Password</label>
-        <input type='password' name='password' id='' placeholder='Type your password' required />
-        <input onClick={() => setAgree(!agree)} type='checkbox' name='terms' id='terms' />
-        <label className={`ps-2 ${agree ? '' : 'text-danger'}`} htmlFor='terms'>
-          Accept Terms and Condition
-        </label>
+        <input className='form-input-field' type='text' name='name' id='' placeholder='Type your name' required />
+        <input className='form-input-field' type='email' name='email' id='' placeholder='Type your email' required />
         <input
-          disabled={!agree}
-          className='bg-primary border-0 rounded w-50 mx-auto mt-2'
-          type='submit'
-          value='Register'
+          className='form-input-field'
+          type='password'
+          name='password'
+          id=''
+          placeholder='Type your password'
+          required
         />
+        <div className='text-center mb-3'>
+          <input className='' onClick={() => setAgree(!agree)} type='checkbox' name='terms' id='terms' />
+          <label className={`ps-2 ${agree ? '' : 'text-danger'}`} htmlFor='terms'>
+            Accept Terms and Condition
+          </label>
+        </div>
+        <input disabled={!agree} className='form-input-field form-input-field-btn' type='submit' value='Register' />
       </form>
-      <p className='w-50 mx-auto'>
+      <p className='text-center'>
         <span style={{ cursor: 'pointer' }} onClick={navigateLogin} className='text-primary'>
-          Login
+          Already Register...??? Login
         </span>
       </p>
       <SocialLogin />

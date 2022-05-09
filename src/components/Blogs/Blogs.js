@@ -5,7 +5,10 @@ const Blogs = () => {
   return (
     <div className='container'>
       <div>
-        <h2>What is the difference between JavaScript and Node.js...???</h2>
+        <div className='text-center my-4'>
+          <h2>What is the difference between JavaScript and Node.js...???</h2>
+          <hr className='features-horizontal' />
+        </div>
         <Table striped bordered hover>
           <thead>
             <tr>
@@ -52,7 +55,10 @@ const Blogs = () => {
         </Table>
       </div>
       <div>
-        <h2>When should use NodeJS and when Should use MongoDB...???</h2>
+        <div className='text-center my-4'>
+          <h2>When should use NodeJS and when Should use MongoDB...???</h2>
+          <hr className='features-horizontal' />
+        </div>
         <Table striped bordered hover>
           <thead>
             <tr>
@@ -97,7 +103,10 @@ const Blogs = () => {
         </Table>
       </div>
       <div>
-        <h2>Differences between SQL and NoSQL database...!!!</h2>
+        <div className='text-center my-4'>
+          <h2>Differences between SQL and NoSQL database...!!!</h2>
+          <hr className='features-horizontal' />
+        </div>
         <Table striped bordered hover>
           <thead>
             <tr>
@@ -140,7 +149,10 @@ const Blogs = () => {
         </Table>
       </div>
       <div>
-        <h2>What is the purpose of jwt and how does it work...???</h2>
+        <div className='text-center my-4'>
+          <h2>What is the purpose of jwt and how does it work...???</h2>
+          <hr className='features-horizontal' />
+        </div>
         <div>
           <p>
             JSON Web Token mainly use for squire data from hacker or any other missing issue. It's an open standard for
