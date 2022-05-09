@@ -8,7 +8,6 @@ import { useNavigate } from 'react-router-dom';
 const MyItems = () => {
   const [user] = useAuthState(auth);
   const [items, setItems] = useState([]);
-  console.log(items);
   const navigate = useNavigate();
 
   useEffect(() => {

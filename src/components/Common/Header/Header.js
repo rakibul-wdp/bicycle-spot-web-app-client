@@ -28,6 +28,7 @@ const Header = () => {
               <CustomLink to={'/myitems'}>My Items</CustomLink>
             </>
           )}
+          <CustomLink to={'/blogs'}>Blogs</CustomLink>
           {user ? <button onClick={handleSignOut}>Sign Out</button> : <CustomLink to={'/login'}>Login</CustomLink>}
         </div>
       </div>
