@@ -43,12 +43,24 @@ const MyItems = () => {
     }
   };
   return (
-    <div>
-      <h2>My Own Items Here </h2>
+    <div className='container'>
+      <div className='text-center my-4'>
+        <h2>
+          <span className='feature-heading'>MY</span> OWN ITEMS
+        </h2>
+        <hr className='features-horizontal' />
+      </div>
       {items.map((item) => (
-        <li key={item._id}>
-          {item.name} <button onClick={() => handleDelete(item._id)}>Delete</button>
-        </li>
+        <div className='w-75 mx-auto my-4 manage-inventory-container' key={item._id}>
+          <img className='manage-inventory-img' src={item.img} alt='' />
+          <span className='manage-inventory-name'>{item.name}</span>
+          <span className='manage-inventory-quantity'>Quantity: {item.quantity}</span>
+          <span>
+            <button className='manage-inventory-delete' onClick={() => handleDelete(item._id)}>
+              Delete
+            </button>
+          </span>
+        </div>
       ))}
     </div>
   );

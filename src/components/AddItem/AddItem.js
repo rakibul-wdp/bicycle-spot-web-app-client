@@ -40,7 +40,7 @@ const AddItem = () => {
         </h2>
         <hr className='features-horizontal' />
       </div>
-      <form className='w-25 mx-auto form-container' onSubmit={handleAddItem}>
+      <form className='mx-auto form-container' onSubmit={handleAddItem}>
         <input className='form-input-field' type='text' name='name' id='' placeholder='Name' required />
         <input
           className='form-input-field'
