@@ -1,3 +1,28 @@
 .inventory-p-q {
+  padding: 0 50px;
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.inventory-container {
+  border-radius: 25px;
+  box-shadow: rgb(17 12 46 / 15%) 0px 48px 100px 0px;
+  text-align: center;
+  padding: 25px;
+}
+.inventory-image {
+  border-radius: 25px;
+}
+.inventory-quantity {
+  font-weight: bold;
+  border: 2px solid #fdc300;
+  border-radius: 5px;
+  padding: 2px 4px;
+}
+.inventory-btn {
+  border: none;
+  background-color: #359ef5;
+  color: #fff;
+  border-radius: 5px;
+  padding: 4px 20px;
 }

@@ -12,13 +12,16 @@ const Inventories = () => {
   };
   return (
     <div className='container'>
-      <h2 className='text-center my-5'>Inventory Item</h2>
+      <h2 className='text-center mt-5'>
+        <span className='feature-heading'>Inventory</span> Items
+      </h2>
+      <hr className='features-horizontal mb-5' />
       <div className='inventories-item'>
         {inventories.slice(0, 6).map((inventory) => (
           <Inventory key={inventory._id} inventory={inventory} />
         ))}
       </div>
-      <button className='d-block text-center my-5' onClick={() => navigateManage()}>
+      <button className='d-block inventories-btn' onClick={() => navigateManage()}>
         Manage Inventory
       </button>
     </div>

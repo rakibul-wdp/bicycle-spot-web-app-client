@@ -10,18 +10,20 @@ const Inventory = ({ inventory }) => {
     navigate(`/inventory/${id}`);
   };
   return (
-    <div>
-      <img width={'300px'} src={img} alt='' />
-      <h2>{name}</h2>
-      <p>Supplier: {supplierName}</p>
+    <div className='inventory-container'>
+      <img className='img-fluid inventory-image' src={img} alt='' />
+      <h3 className='text-center'>{name}</h3>
+      <p className='fw-bold'>Supplier: {supplierName}</p>
       <div className='inventory-p-q'>
         <p>Price: {price}</p>
-        <p>Quantity: {quantity}</p>
+        <p className='inventory-quantity'>Quantity: {quantity}</p>
       </div>
       <p>
-        <small>{description}</small>
+        <small>{description.slice(0, 150)}...</small>
       </p>
-      <button onClick={() => navigateToStockDetail(_id)}>Stock Update</button>
+      <button className='inventory-btn' onClick={() => navigateToStockDetail(_id)}>
+        Stock Update
+      </button>
     </div>
   );
 };
