@@ -18,7 +18,7 @@ const AddItem = () => {
     const img = e.target.img.value;
     const item = { email, name, price, quantity, supplierName, description, img };
 
-    fetch('http://localhost:5000/items', {
+    fetch('https://still-waters-92870.herokuapp.com/items', {
       method: 'POST',
       headers: {
         'content-type': 'application/json',

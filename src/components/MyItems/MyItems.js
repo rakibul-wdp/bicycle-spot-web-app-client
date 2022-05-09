@@ -13,7 +13,7 @@ const MyItems = () => {
   useEffect(() => {
     const getItems = async () => {
       const email = user?.email;
-      const url = `http://localhost:5000/items?email=${email}`;
+      const url = `https://still-waters-92870.herokuapp.com/items?email=${email}`;
       try {
         const { data } = await axiosPrivate.get(url);
         setItems(data);
@@ -31,7 +31,7 @@ const MyItems = () => {
     const email = user?.email;
     const proceed = window.confirm('Are you sure?');
     if (proceed) {
-      const url = `http://localhost:5000/items?email=${email}`;
+      const url = `https://still-waters-92870.herokuapp.com/items?email=${email}`;
       fetch(url, {
         method: 'DELETE',
       })

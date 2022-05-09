@@ -10,7 +10,7 @@ const InventoryDetail = () => {
   const { _id, img, name, description, price, quantity, supplierName } = stock;
 
   useEffect(() => {
-    const url = `http://localhost:5000/stock/${inventoryId}`;
+    const url = `https://still-waters-92870.herokuapp.com/stock/${inventoryId}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setStock(data));
@@ -20,7 +20,7 @@ const InventoryDetail = () => {
     const storeQuantity = parseInt(stock?.quantity);
     const quantity = storeQuantity - 1;
     if (quantity > 0) {
-      fetch(`http://localhost:5000/stock/${inventoryId}`, {
+      fetch(`https://still-waters-92870.herokuapp.com/stock/${inventoryId}`, {
         method: 'PUT',
         headers: {
           'Content-type': 'application/json; charset=UTF-8',
@@ -42,7 +42,7 @@ const InventoryDetail = () => {
     const newQuantity = parseInt(e.target.quantity.value);
     const quantity = storeQuantity + newQuantity;
     if (quantity > 0) {
-      fetch(`http://localhost:5000/stock/${inventoryId}`, {
+      fetch(`https://still-waters-92870.herokuapp.com/stock/${inventoryId}`, {
         method: 'PUT',
         headers: {
           'Content-type': 'application/json; charset=UTF-8',
