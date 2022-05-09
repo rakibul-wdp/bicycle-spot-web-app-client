@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import useInventories from '../../hooks/useInventories';
+import './ManageInventory.css';
 
 const ManageInventory = () => {
   const navigate = useNavigate();
@@ -25,13 +26,29 @@ const ManageInventory = () => {
     navigate('/add');
   };
   return (
-    <div>
-      <h2>Manage your Inventory</h2>
-      <button onClick={() => navigateAddItem()}>Add New Item</button>
+    <div className='container'>
+      <div className='text-center my-4'>
+        <h2>
+          <span className='feature-heading'>MANAGE</span> INVENTORY
+        </h2>
+        <hr className='features-horizontal' />
+      </div>
+      <div className='text-center'>
+        <button className='text-center add-new-item-btn mb-5' onClick={() => navigateAddItem()}>
+          Add New Item
+        </button>
+      </div>
       {inventories.map((inventory) => (
-        <li key={inventory._id}>
-          {inventory.name} <button onClick={() => handleDelete(inventory._id)}>Delete</button>
-        </li>
+        <div className='w-75 mx-auto my-4 manage-inventory-container' key={inventory._id}>
+          <img className='manage-inventory-img' src={inventory.img} alt='' />
+          <span className='manage-inventory-name'>{inventory.name}</span>
+          <span className='manage-inventory-quantity'>Quantity: {inventory.quantity}</span>
+          <span>
+            <button className='manage-inventory-delete' onClick={() => handleDelete(inventory._id)}>
+              Delete
+            </button>
+          </span>
+        </div>
       ))}
     </div>
   );
